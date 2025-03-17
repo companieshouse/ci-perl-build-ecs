@@ -13,7 +13,7 @@ ARG gopan_tag_version=v${gopan_version}
 RUN dnf update && \
     dnf upgrade -y && \
     dnf groupinstall -y "Development Tools" && \
-    dnf install -y awscli-2 git gzip openssl openssl-devel tar
+    dnf install -y awscli-2 expat-devel git gzip openssl openssl-devel tar
 
 # Install vendor packages for build-time Perl compilation tests
 RUN yum install -y procps-ng

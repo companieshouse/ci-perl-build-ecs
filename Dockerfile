@@ -13,13 +13,9 @@ ARG gopan_tag_version=v${gopan_version}
 RUN dnf update && \
     dnf upgrade -y && \
     dnf groupinstall -y "Development Tools" && \
-    dnf install -y awscli-2 expat-devel git gzip openssl openssl-devel tar
-
-# Install vendor packages for build-time Perl compilation tests
-RUN yum install -y procps-ng
-
-# Install vendor packages to support Perlbrew installation
-RUN yum install -y perl-ExtUtils-MakeMaker perl-deprecate
+    dnf install -y awscli-2 expat-devel git gzip openssl openssl-devel tar procps-ng perl-ExtUtils-MakeMaker perl-deprecate && \
+    dnf clean all && \
+    rm -rf /var/cache/dnf /tmp/*
 
 # Install GoPAN for dependency resolution
 ADD https://github.com/companieshouse/gopan/releases/download/${gopan_tag_version}/gopan-${gopan_version}-linux_amd64.tar.gz /gopan-${gopan_version}-linux_amd64.tar.gz

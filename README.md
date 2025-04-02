@@ -22,7 +22,7 @@ The following list details the distribution-managed packages installed in the co
 |-----------------------|--------------------------------------------------------------------------------------------------------|
 | `awscli-2`            | Used to retrieve non distribution-managed dependency packages from the S3 release bucket               |
 | `git`, `tar`, `unzip` | Required for working with `git` submodules as well as `.zip` and `.tar.gz` files during service builds |
-| `@Development tools`, `procps-ng` | Required when building Perl from source and during service builds for compiled modules     |
+| `gcc`, `bzip2`, `patch`, `procps-ng` | Required when building Perl from source and during service builds for compiled modules  |
 | `expat-devel`         | Required dependency of `XML::Parser` Perl module                                                       |
 | `openssl`, `openssl-devel` | SSL libraries used by multiple tools and Perl modules                                             |
 | `perl-ExtUtils-MakeMaker` `perl-deprecate` | Required dependencies of [Perlbrew](https://perlbrew.pl/)                         |

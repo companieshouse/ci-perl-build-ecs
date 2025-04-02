@@ -35,7 +35,8 @@ RUN source /opt/perlbrew/etc/bashrc && \
     perlbrew install -v perl-${perl_version} ${perl_build_args} && \
     perlbrew install-cpanm -v && \
     perlbrew use perl-${perl_version} && \
-    cpanm Test::Harness
+    cpanm Test::Harness && \
+    perlbrew clean
 
 # Set local time zone
 RUN unlink /etc/localtime && ln -s /usr/share/zoneinfo/Europe/London /etc/localtime

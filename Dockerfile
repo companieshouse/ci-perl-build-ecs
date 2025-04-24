@@ -12,7 +12,7 @@ ARG gopan_tag_version=v${gopan_version}
 # Update system packages and install build tooling
 RUN dnf update && \
     dnf upgrade -y && \
-    dnf install -y gcc gcc-c++ bzip2 patch awscli-2 expat-devel git gzip openssl openssl-devel tar procps-ng perl-ExtUtils-MakeMaker perl-deprecate && \
+    dnf install -y gcc gcc-c++ bzip2 patch awscli-2 expat-devel git gzip openssl openssl-devel tar procps-ng perl-ExtUtils-MakeMaker perl-deprecate libzip && \
     dnf clean all && \
     rm -rf /var/cache/dnf /tmp/*
 

@@ -30,6 +30,11 @@ RUN dnf update && \
     dnf clean all && \
     rm -rf /var/cache/dnf /tmp/*
 
+# Install GoPAN for dependency resolution
+ADD https://github.com/companieshouse/gopan/releases/download/${gopan_tag_version}/gopan-${gopan_version}-linux_amd64.tar.gz /gopan-${gopan_version}-linux_amd64.tar.gz
+RUN tar -C /usr/local/bin -xzf /gopan-${gopan_version}-linux_amd64.tar.gz && \
+    rm -f /gopan-${gopan_version}-linux_amd64.tar.gz
+
 # Install App::cpanminus
 RUN curl -L https://cpanmin.us | perl - App::cpanminus
 
